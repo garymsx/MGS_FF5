@@ -1,0 +1,65 @@
+;[gain=1.0 name=FF5_01P duration=300s fade=5s]
+#opll_mode 0
+#tempo 140
+#title { "Final Fantasy Vより メインテーマPSG (C)SQUARE ENIX"}
+
+@e0  = {1, 0, f }
+@e1  = {1, 0, dfffeeeddd }
+@e2  = {1, 0, deffee8 }
+@e3  = {1, 0, fed0=90 }
+@e4  = {1, 0, fedc }
+
+@e10 = {2,20, fdcba0 }
+@e11 = {2,20, fd0=30 }
+
+1 @e1 V13 O4 L16 H10,1,1,1
+1 Q4 r2..cf Q8 g1& g2. Q4r8fb-> Q8 c1
+1 [
+1  @e1 V12 O4 L4 H10,1,1,1
+1  g2<b>c  d2.a   g1     e-2e-f
+1  g2>c2<  a2.f   g2>d2< a1
+1  g2<b>c  d2.a   g1     e-2e-f
+1  g2b-2   a2.f4  g1&    g2.r4>
+1  d2<g2> f2e-d cd<a2& a1>
+1  cd<a2& aga>c< b-g2.&g gab->
+1  d2<g2> f2e-d  cd<a2&  a1>
+1  c2<f2> gfe-f  d1&     d2.r4
+1  d2.c<  b-2g2  g->dc2& c2<b-g-
+1  b-1&   b-1    r1      r1
+1 ]0
+
+2  @e2 V11 O4 L8 H0,1,1,1
+2  [eeffeedd]4
+2 [
+2  @e2 V11 O4 L8 H0,1,1,1
+2  eeffeedd f+f+ggf+f+ee e-e-ffe-e-dd e-e-ffe-e-dd
+2  [e-e-ffe-e-dd]4
+2  eeffeedd f+f+ggf+f+ee e-e-ffe-e-dd e-e-ffe-e-dd
+2  L16 @e1 O4 e-<gb->e-g<b->e-gb-e-gb->e-<gb->e-< f<a>cfacfa>c<fa>cf<a>cf c1< b1<
+2  @e3 V10 O3 HF
+2  [
+2    [e-gb->e-gb->e-gb-ge-<b-ge-<b-g] [e-a>cfa>cfa>c<afc<afc<a]
+2    [dfa>dfa>dfafd<afd<af] | [dgb->dgb->dgb-gd<b-gd<b-g]
+2  ] [dgb>dgb>dgbgd<bgd<bg]
+2  @e2 V10 O4 HO L4
+2  e-1& e-1    g->dc2& c2<b-g-
+2  f1&  f1&    f1&     f1
+2 ]0
+
+3  @e3 V12 L8 O3
+3  e32g32>c8. f32g32>c8. g32>c32e8.r4 r1 <<<e32g32>c8. f32g32>c8. g32>c32e8.r4 <<<
+3  L24 ceg>ceg<g>ceg>ce<ceg>ceg<g>ceg>ce
+3 [
+3  @e4 V13 O2 L8 Q7
+3  [ccr2>c<g ccr2.]
+3  [e-e-r2>e-<b- ffr2.]
+3  [ccr2>c<g ccr2.]>
+3  Q8 e-4d4c4<b-4 a4g4f4>c4< Q7 [ggrd]3 gg @e10 c8c16c16 @e3
+3  [
+3    e-e-r4 @e10 c4 @e4 >e-<b- e-e-r4 @e10 c4 @e4 r4 e-e-r4 @e10 c4 @e4 >fc< e-e-r4 @e10 c4 @e4 r4
+3    ddr4   @e10 c4 @e4 >d<a   ddr4   @e10 c4 @e4 r4 ggr4   @e10 c4 @e4 >gd< ggr4 @e10 c8 @e4 fr4
+3  ]
+3  ccr>c< @e10 c @e4 cr>c< ccrg  @e10 c @e4 crg ccr>c< @e10 c @e4 cr>c< ccrg- @e10 c @e4 crc
+3  b-b-rf @e10 c @e4 b-r4 a-a-rf @e10 c @e4 a-r4 [g-d-]2 @e10 c @e4 d-g-d- ffr4 @e10 c @e4 f @e11 c4 @e4
+3 ]0
+
