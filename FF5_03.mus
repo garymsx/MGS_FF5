@@ -1,0 +1,148 @@
+;[gain=1.0 name=FF5_03 duration=300s fade=5s]
+#opll_mode 0
+#tempo 130
+#title { "Final Fantasy Vより 4つの心 (C)SQUARE ENIX"}
+
+;#alloc {4=1200}
+;#alloc {5=1200}
+;#alloc {6=1200}
+;#alloc {7=1200}
+;#alloc {9=1200}
+;#alloc {a=1200}
+
+@e0  = {1, 0, f }
+@e1  = {1, 0, adf[ffeeeddddeeeff] }
+@e2  = {1, 0, adfffa }
+@e3  = {1, 0, 4f=120,[ffeeeddddeeeff] }
+
+@e5  = {1, 0, fe0=15 }
+
+@e10 = {3,30, f8=32, 70=120 }
+
+@e20 = {0, 0, feeddcc}
+@e25 = {0, 0, feeedddcccbbbaaa}
+
+;* ティンパニ
+;       TL FB AR DR SL RR KL MT,AM,VB,EG,KR,DT
+@v15 = {12, 2,15, 4, 6, 4, 0, 3, 0, 1, 0, 0, 1
+             ,15, 4, 6, 4, 0, 0, 0, 1, 1, 1, 1}
+
+;* 太鼓
+;       TL FB AR DR SL RR KL MT,AM,VB,EG,KR,DT
+@v16 = { 0, 7,15,10,15, 0, 0, 2, 0, 0, 0, 0, 1
+             ,15, 6, 8, 0, 0, 1, 0, 0, 0, 0, 0}
+
+; ストリングス (T_SAW(%X) * 32 + T_SAW(%X * 2) * 24 + T_SIN(%X * 4) * 32)
+@s00 = { C8E4F2EE DDCBC7D6 F10D1C17 06F4F0FF
+         E905130F FEECE8F7 122E3D38 27161120 }
+
+;123456789ABCDEFGH !
+;123456789ABDC !
+
+#macro_offset A = 100
+
+*0 = {Y6,255 Y7,255}
+;*1 = {Y14,32 Y39,5 Y23,80 Y40,1 Y24,192}
+*1 = {Y14,32 Y39,0 Y23,171 Y40,1 Y24,192}
+
+45   r1
+45  [
+4    @0 @e2 V10 O5 L12
+5    @0 @e2 V10 O5 L12 \1
+45   [
+45      @e2 c8r8cccc8r8r8<b16b16 b8r8r8b16b16b8r8 @e1 b4 > @e2   c8r8cccc8r8r8d16d16   @e2 d8r8r8d16d16d8r8 @e1 d4
+45      @e2 c8r8cccc8r8r8d16d16  d8r8r8d16d16d8r8 @e1 d4   @e2 | c8r8cccc8r8r8d16d16       d8r8r8d16d16d8r8ddd
+45   ]
+45   c8r8cccc8r8ccc c8r8cccc6c6c6
+45   @e1
+45   [c2<a+2& a+2g+4a+4> c1& c1]
+45 ]0
+
+67   r1
+67 [
+6    @0 @e2 V10 O4 L12
+7    @0 @e2 V10 O4 L12 \1
+67   [
+67     @e2 a8r8aaaa8r8r8g16g16          g8r8r8g16g16g8r8 @e1 g4      @e2   g+8r8g+g+g+g+8r8r8a+16a+16   a+8r8r8a+16a+16a+8r8 @e1 a+4
+67     @e2 g+8r8g+g+g+g+8r8r8a+16a+16   a+8r8r8a+16a+16a+8r8 @e1 a+4 @e2 | g+8r8g+g+g+g+8r8r8a+16a+16   a+8r8r8a+16a+16a+8r8a+a+a+
+67   ]
+67   @e2 g8r8gggg8r8ggg g8r8gggg6g6g6
+67   @e1
+67   f+1& f+1 a1& a1
+67   g+1& g+1 g1& g1
+67 ]0
+
+8B   r1
+8B [
+8    @0 @e2 V10 O4 L12
+B    @0 @e2 V13 O5 L12
+8B   [
+8B      @e2 c8r8cccc8r8r8d16d16      d8r8r8d16d16d8r8 @e1 d4 @e2   d+8r8d+d+d+d+8r8r8d16d16  @e2 d8r8r8d16d16d8r8 @e1 d4
+8B      @e2 d+8r8d+d+d+d+8r8r8d16d16 d8r8r8d16d16d8r8 @e1 d4 @e2 | d+8r8d+d+d+d+8r8r8d+16d+16    d8r8r8d16d16d8r8ddd
+8B   ]
+8B   f8r8ffff8r8fff e8r8eeee6e6e6
+8B   @e1
+8B   d+1& d+1 f1& f1
+8B   f1&  f1  f1  e1
+8B ]0
+
+9A    r1
+9A  [
+9     @8 V12 O6 L4 H20,1,1,2 \0
+A     @6 V12 O6 L4 H21,1,1,2 \1
+9A    [
+9A      c2<e4f4 g2.>d4   c1<  a-2a-4b-4>
+9A     |c2f2    d2.<b-4> c2g2 d1
+9A    ] c2e-2   d2.<b-4> c1   r1
+9A    c2.c+< b-2a-4b-4> c1< c1>
+9A    c2.c+< b-2a-4b-4> c1  r1
+9A  ]0
+
+C     r1
+C  [
+C     @13 V13 O3 L8 Q8
+C     [
+C       [frfrfrrr   frrf16f16>f4<f4]
+C       g+rg+rg+rrr a+rra+16a+16>f4<a+4 | g+rg+rg+rrr a+rra+16a+16>f4<a+4
+C     ] > [c4<g4>]4
+C     < f+1& f+2f+2 g1> d2<g4a4
+C       a+1& a+2a+2  >c1&  c1 
+C  ]0
+
+D  r1
+E  @16 V12 O4 L12 H0,30,0,-20 Q4
+E  d+rrd+d+d+d+rd+[V-d+24d+24]3V+3
+DE [
+D     @9  V13 O3 L8 H0,1,0,4
+E     @15 V15 O3 L8 H0,1,0,4 \5
+DE    [r2f4c4 r1]7
+DE    [c4<g4>]4
+
+D     @0 @e1 V14 O4 HF
+D     a+1& a+1 > d1& d1
+D     c+1& c+1 c1& c1
+
+E     @11 @e20 V13 O3 L16 HF
+E     f+a+>c+f+a+>c+f+a+<<  a+>c+f+a+>c+f+a+>c+<<   c+f+a+>c+f+a+>c+f+<< f+a+>c+f+a+>c+f+a+>
+E     c<afdc<afd>           afdc<afdc>              fdc<afdc<a>>         dc<afdc<af 
+E     fa+>c+fa+>c+fa+<<     a+>c+fa+>c+fa+>c+<<     c+fa+>cf+a+>c+f<<    fa+>c+fa+>c+fa+>
+E     c<gfc<gfc<g>>         gfc<gfc<gf>>            ec<gec<gec>>         c<gec<gec<g
+
+DE ]0
+
+F     *1  @1       V14 L12 O4 H0,20,0,-20 \20
+G         @14 @e25 V12 L12 O1 Q1 SO
+FG    crrccccrc[V-c24c24]3V+3
+FG [
+FG    [
+FG      [crrccccrrr4 | crrr8c16c16crr[V-c24c24]3V+3]4 crrr8c16c16crrccc
+FG    ]
+FG    [r1]8
+FG ]0
+
+3  @e10 O8 V13
+3  r1
+3  [
+3    [r1]16
+3    g1 [r1]7
+3  ]0
